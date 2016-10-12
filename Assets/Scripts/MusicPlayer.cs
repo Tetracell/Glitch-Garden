@@ -6,7 +6,7 @@ public class MusicPlayer : MonoBehaviour {
 	//static MusicPlayer instance = null;
 
 	public AudioClip[] levelMusicChangeArray;
-	private AudioSource audioSource;
+	public AudioSource audioSource;
 
 	void Awake()
 	{
@@ -28,14 +28,14 @@ public class MusicPlayer : MonoBehaviour {
 	void OnLevelWasLoaded (int level)
 	{
 		AudioClip currentLevel = levelMusicChangeArray[level];
-		Debug.Log("Playing clip: " + levelMusicChangeArray[level]);
+		Debug.Log("Playing clip: " + currentLevel);
 		Debug.Log("Current level: " + level);
 
 		if (currentLevel) // Checking if there is some music attatched to the current scene
 		{
-			audioSource.clip = currentLevel;
-			audioSource.loop = true;
-			audioSource.Play();
-		}
+                audioSource.clip = currentLevel;
+                audioSource.loop = true;
+                audioSource.Play();
+        }
 	}
 }
