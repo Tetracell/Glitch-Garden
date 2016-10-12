@@ -17,6 +17,7 @@ public class MusicPlayer : MonoBehaviour {
 	void Start ()
 	{
 		audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefsManager.GetMasterVolume();
 		Debug.Log("Hitting the start function");
 		if (SceneManager.GetActiveScene().buildIndex == 0) // Used to play music on the loading screen. This is necessary, try to find better way.
 		{
