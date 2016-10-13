@@ -15,7 +15,7 @@ public class OptionsController : MonoBehaviour {
     float volumeLevel;
     float currentVolume;
     float musicVolume;
-    float difficulty;
+    int difficulty;
 
     GameObject easyDiff;
     GameObject mediumDiff;
@@ -54,19 +54,19 @@ public class OptionsController : MonoBehaviour {
         musicManager.ChangeVolume(volumeSlider.value);
         volumeLevel = volumeSlider.value;
 
-        if (difficultySlider.value >= 0f && difficultySlider.value < 0.5f)
+        if (difficultySlider.value == 1)
         {
             easyDiff.SetActive(true);
             mediumDiff.SetActive(false);
             hardDiff.SetActive(false);
         }
-        else if (difficultySlider.value >= 0.5f && difficultySlider.value < 0.85f)
+        else if (difficultySlider.value == 2)
         {
             easyDiff.SetActive(false);
             mediumDiff.SetActive(true);
             hardDiff.SetActive(false);
         }
-        else if (difficultySlider.value >= 0.85f)
+        else if (difficultySlider.value == 3)
         {
             easyDiff.SetActive(false);
             mediumDiff.SetActive(false);
