@@ -26,6 +26,11 @@ public class MusicPlayer : MonoBehaviour {
 		}
 	}
 
+    public void ChangeVolume(float volume)
+    {
+        audioSource.volume = volume;
+    }
+
 	void OnLevelWasLoaded (int level)
 	{
 		AudioClip currentLevel = levelMusicChangeArray[level];
