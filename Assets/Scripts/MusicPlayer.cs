@@ -8,17 +8,25 @@ public class MusicPlayer : MonoBehaviour {
 	public AudioClip[] levelMusicChangeArray;
 	public AudioSource audioSource;
 
-	void Awake()
+
+
+    //To do:
+    
+    //  1) Have the music manager recognize that a clip is already playing and handle it better.
+    //      I don't want the music to restart simply because I'm going back from the options screen
+    //      to the start menu. A minor problem, but annoying.
+
+
+
+    void Awake()
 	{
-		DontDestroyOnLoad(gameObject);
-		Debug.Log("Don't destroy on load: " + name);        
+		DontDestroyOnLoad(gameObject);        
 	}
 
 	void Start ()
 	{
 		audioSource = GetComponent<AudioSource>();
         audioSource.volume = PlayerPrefsManager.GetMasterVolume();
-		Debug.Log("Hitting the start function");
 		if (SceneManager.GetActiveScene().buildIndex == 0) // Used to play music on the loading screen. This is necessary, try to find better way.
 		{
 			audioSource.clip = levelMusicChangeArray[0];
@@ -34,10 +42,7 @@ public class MusicPlayer : MonoBehaviour {
 	void OnLevelWasLoaded (int level)
 	{
 		AudioClip currentLevel = levelMusicChangeArray[level];
-		Debug.Log("Playing clip: " + currentLevel);
-		Debug.Log("Current level: " + level);
-
-		if (currentLevel) // Checking if there is some music attatched to the current scene
+        if (currentLevel) // Checking if there is some music attatched to the current scene
 		{
                 audioSource.clip = currentLevel;
                 audioSource.loop = true;
