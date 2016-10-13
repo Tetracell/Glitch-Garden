@@ -23,7 +23,7 @@ public class TEST : MonoBehaviour {
         print(PlayerPrefsManager.IsLevelUnlocked(2));
 
         print(PlayerPrefsManager.GetDifficulty());
-        PlayerPrefsManager.SetDifficulty(.5f);
+        
         print(PlayerPrefsManager.GetDifficulty());
 
 

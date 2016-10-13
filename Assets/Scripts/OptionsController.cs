@@ -54,6 +54,7 @@ public class OptionsController : MonoBehaviour {
         musicManager.ChangeVolume(volumeSlider.value);
         volumeLevel = volumeSlider.value;
 
+        #region If statement for changing difficulty text
         if (difficultySlider.value == 1)
         {
             easyDiff.SetActive(true);
@@ -72,21 +73,21 @@ public class OptionsController : MonoBehaviour {
             mediumDiff.SetActive(false);
             hardDiff.SetActive(true);
         }
-
+        #endregion
 
     }
 
     public void savePrefs()
     {
         PlayerPrefsManager.SetMasterVolume(volumeLevel);
-        PlayerPrefsManager.SetDifficulty(difficultySlider.value);
+        PlayerPrefsManager.SetDifficulty((int)difficultySlider.value); // Slider values are apparently always a float, so a cast is used to convert properly.
     }
 
     public void setDefaults()
         {
             musicManager.ChangeVolume(0.7f);
             volumeSlider.value = 0.7f;
-            difficulty = 0.5f;
+            difficulty = 2;
             difficultySlider.value = difficulty;
             //volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
         }

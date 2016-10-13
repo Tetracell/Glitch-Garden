@@ -52,7 +52,7 @@ public class PlayerPrefsManager : MonoBehaviour
         {
             if (difficulty >= 1 && difficulty <= 3)
             {
-                PlayerPrefs.SetFloat(DIFFICULTY_KEY, difficulty);
+                PlayerPrefs.SetInt(DIFFICULTY_KEY, difficulty);
             }
             else
             {
@@ -80,9 +80,9 @@ public class PlayerPrefsManager : MonoBehaviour
         //throw new NotImplementedException(); // this is cool. needs using System;
     }
 
-    public static float GetDifficulty()
+    public static int GetDifficulty()
     {
-        return PlayerPrefs.GetFloat(DIFFICULTY_KEY);
+        return PlayerPrefs.GetInt(DIFFICULTY_KEY);
     }
 
     public static float GetMasterVolume()
