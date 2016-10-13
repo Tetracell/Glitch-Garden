@@ -38,8 +38,8 @@ public class OptionsController : MonoBehaviour {
         #endregion
 
         musicManager = GameObject.FindObjectOfType<MusicPlayer>(); // Find the music manager so I can access it.
-        currentVolume = PlayerPrefsManager.GetMasterVolume(); // Get the saved value of the volume.
-        volumeSlider.value = currentVolume;
+        volumeLevel = PlayerPrefsManager.GetMasterVolume(); // Get the saved value of the volume.
+        volumeSlider.value = volumeLevel;
 
         difficultySlider.value = PlayerPrefsManager.GetDifficulty();
         
@@ -51,8 +51,8 @@ public class OptionsController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        musicManager.ChangeVolume(volumeSlider.value);
         volumeLevel = volumeSlider.value;
+        musicManager.ChangeVolume(volumeLevel);        
 
         #region If statement for changing difficulty text
         if (difficultySlider.value == 1)
@@ -74,7 +74,6 @@ public class OptionsController : MonoBehaviour {
             hardDiff.SetActive(true);
         }
         #endregion
-
     }
 
     public void savePrefs()
@@ -86,10 +85,13 @@ public class OptionsController : MonoBehaviour {
     public void setDefaults()
         {
             musicManager.ChangeVolume(0.7f);
-            volumeSlider.value = 0.7f;
             difficulty = 2;
+            volumeSlider.value = musicManager.audioSource.volume;
             difficultySlider.value = difficulty;
-            //volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
+            
+
+            //difficultySlider.value = PlayerPrefsManager.GetDifficulty();    // Seems like I need to change the value of the sliders manually                                     
+            //volumeSlider.value = PlayerPrefsManager.GetMasterVolume();      // to stop things from messing up. Ben doesn't though in the video?
         }
 
 
