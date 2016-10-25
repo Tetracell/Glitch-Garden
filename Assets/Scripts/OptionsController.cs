@@ -10,7 +10,7 @@ public class OptionsController : MonoBehaviour {
     public LevelManager levelManager;
 
     private MusicPlayer musicManager; 
-    // if this is correct, it's because I named my musicmanager MuiscPlayer
+    // if this is correct, it's because I named my musicmanager MusicPlayer
 
     float volumeLevel;
     float currentVolume;
@@ -25,7 +25,7 @@ public class OptionsController : MonoBehaviour {
 	void Start ()
     {
         // Testing the difficulty settings
-        //PlayerPrefsManager.SetDifficulty(0.1f);
+        // PlayerPrefsManager.SetDifficulty(0.1f);
 
         #region Inital values for difficulty objects
         easyDiff = GameObject.Find("Easy");
