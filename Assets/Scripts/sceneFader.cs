@@ -21,7 +21,7 @@ public class sceneFader : MonoBehaviour {
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         Debug.Log("Don't destroy on load: " + name);
     }
 

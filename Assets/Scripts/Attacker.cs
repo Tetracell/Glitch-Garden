@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Attacker : MonoBehaviour {
-    //[Range (-1f, 1.5f)] // Literally the best thing in Unity so far.
+    [Range (-1f, 1.5f)] // Literally the best thing in Unity so far.
     public float walkSpeed;
 
 	// Use this for initialization
