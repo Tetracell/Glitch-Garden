@@ -14,4 +14,9 @@ public class Defender : MonoBehaviour {
     {
 	
 	}
+
+    void OnTriggerEnter2D()
+    {
+        Debug.Log("FART");
+    }
 }
