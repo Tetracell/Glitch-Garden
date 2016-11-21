@@ -30,6 +30,6 @@ public class Attacker : MonoBehaviour {
 
     public void StrikeCurrentTarget(float damage)
     {
-        Debug.Log("I am attacking");
+        Debug.Log("I am attacking for : " + damage);
     }
 }
