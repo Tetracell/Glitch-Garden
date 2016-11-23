@@ -38,14 +38,14 @@ public class Attacker : MonoBehaviour {
     public void lizardAttack (GameObject obj)
     {
         currentTarget = obj;
-        //StrikeCurrentTarget(2.0f);
+        //StrikeCurrentTarget(2.0f); <--- called from animator
         currentSpeed = 0f;      
     }
 
     public void foxAttack (GameObject obj)
     {
         currentTarget = obj;
-        //StrikeCurrentTarget(2.0f);
+        //StrikeCurrentTarget(2.0f); <--- called from animator
         currentSpeed = 0f;
     }
 }
