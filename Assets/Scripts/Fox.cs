@@ -35,8 +35,8 @@ public class Fox : MonoBehaviour {
             anim.SetTrigger("jump trigger");
         } else
         {
-            anim.SetBool("is attacking", true);
-            attacker.Attack(obj);
+            anim.SetBool("isAttacking", true);
+            attacker.foxAttack(obj);
         }
     }
 }

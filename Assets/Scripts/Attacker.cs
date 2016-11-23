@@ -30,14 +30,22 @@ public class Attacker : MonoBehaviour {
     }
 
     //called From the animator at the time of the actual blow
-    public void StrikeCurrentTarget(float damage)
+    public void StrikeCurrentTarget(float damage) // Don't need references in any code for this, should only be called by animator.
     {
         Debug.Log("I am attacking for : " + damage);
     }
 
-    public void Attack (GameObject obj)
+    public void lizardAttack (GameObject obj)
     {
         currentTarget = obj;
-        StrikeCurrentTarget(2.0f);       
+        //StrikeCurrentTarget(2.0f);
+        currentSpeed = 0f;      
+    }
+
+    public void foxAttack (GameObject obj)
+    {
+        currentTarget = obj;
+        //StrikeCurrentTarget(2.0f);
+        currentSpeed = 0f;
     }
 }
