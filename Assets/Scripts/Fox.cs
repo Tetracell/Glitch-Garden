@@ -6,11 +6,13 @@ public class Fox : MonoBehaviour {
 
     private Animator anim;
     private Attacker attacker;
+     
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
         attacker = GetComponent<Attacker>();
+        // float health = Health.setHealth(5.0f);
 	}
 	
 	// Update is called once per frame
