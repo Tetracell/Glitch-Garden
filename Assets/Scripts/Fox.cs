@@ -6,24 +6,26 @@ public class Fox : MonoBehaviour {
 
     private Animator anim;
     private Attacker attacker;
+
+    public float damage = 15.0f;
      
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         anim = GetComponent<Animator>();
         attacker = GetComponent<Attacker>();
         // float health = Health.setHealth(5.0f);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 
     void OnTriggerEnter2D (Collider2D collider)
     {
-        
-
         GameObject obj = collider.gameObject;
 
         //Leave the method if not colliding with a defender
@@ -38,7 +40,7 @@ public class Fox : MonoBehaviour {
         } else
         {
             anim.SetBool("isAttacking", true);
-            attacker.foxAttack(obj);
+            //attacker.foxAttack(obj);
         }
     }
 }

@@ -6,18 +6,25 @@ public class Health : MonoBehaviour {
     public float health;
 
 	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Start ()
+    {	
 	}
 
-    public float setHealth(float health)
+    public void dealDamage(float damage)
     {
-        return health;
+        health -= damage;
     }
+	
+	// Update is called once per frame
+	void Update ()
+    {
+	    if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+	}
+
+
+    
 
 }
