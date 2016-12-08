@@ -33,19 +33,27 @@ public class Attacker : MonoBehaviour {
     public void StrikeCurrentTarget(float damage) // Don't need references in any code for this, should only be called by animator.
     {
         Debug.Log("I am attacking for : " + damage);
+        if (currentTarget) // is there a target
+        {
+            Health health = currentTarget.GetComponent<Health>();
+            if (health) // does it have a health component
+            {
+                health.dealDamage(damage); // deal dat damage
+            }
+        }
+        
     }
 
     public void lizardAttack (GameObject obj)
     {
         currentTarget = obj;
-        //StrikeCurrentTarget(2.0f); <--- called from animator
-        currentSpeed = 0f;      
+        currentSpeed = 0f;  
+            
     }
 
     public void foxAttack (GameObject obj)
     {
         currentTarget = obj;
-        //StrikeCurrentTarget(2.0f); <--- called from animator
         currentSpeed = 0f;
     }
 }
