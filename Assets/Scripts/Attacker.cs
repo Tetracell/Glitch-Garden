@@ -6,6 +6,8 @@ public class Attacker : MonoBehaviour {
     public float currentSpeed;
     private GameObject currentTarget;
 
+    Animator animator;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -44,16 +46,16 @@ public class Attacker : MonoBehaviour {
         
     }
 
-    public void lizardAttack (GameObject obj)
-    {
-        currentTarget = obj;
-        currentSpeed = 0f;  
-            
-    }
+    //public void lizardAttack(GameObject obj)
+    //{
+    //    currentTarget = obj;
+    //    currentSpeed = 0f;
 
-    public void foxAttack (GameObject obj)
-    {
-        currentTarget = obj;
-        currentSpeed = 0f;
-    }
+    //}
+
+    //public void foxAttack(GameObject obj)
+    //{
+    //    currentTarget = obj;
+    //    currentSpeed = 0f;
+    //}
 }
