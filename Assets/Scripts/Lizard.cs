@@ -32,7 +32,7 @@ public class Lizard : MonoBehaviour {
         else
         {
             anim.SetBool("isAttacking", true);
-            attacker.lizardAttack(obj);
+            //attacker.lizardAttack(obj);
         }
 
     }
